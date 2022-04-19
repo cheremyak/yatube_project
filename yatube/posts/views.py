@@ -1,14 +1,16 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-     return HttpResponse('Главная страница проекта Yatube')
+     template = 'posts/index.html'
+     return render(request, template)
 
 
-def creature_list(request):
-     return HttpResponse('Список чудовищ.')
+def group_list(request):
+     return HttpResponse('Список блогеров.')
 
 
-def group_posts(request, creature):
-    return HttpResponse(f'Данные чудовища относятся к группе {creature}')
+def group_posts(request, blogger):
+    return HttpResponse(f'Данные блогеры относятся к группе {blogger}')
     
