@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+#yatube/urls.py
 urlpatterns = [
-    path('', include('posts.urls')),
+    path('', include('posts.urls', namespace='posts')),
     path('admin/', admin.site.urls),
 ]
