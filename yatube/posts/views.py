@@ -8,7 +8,8 @@ def index(request):
 
 
 def group_list(request):
-     return HttpResponse('Список блогеров.')
+     template = 'posts/group_list.html'
+     return render(request, template)
 
 
 def group_posts(request, blogger):
