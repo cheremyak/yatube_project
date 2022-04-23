@@ -4,7 +4,7 @@
 {% block content %}
 <main>
    <div class="container py-5"> 
-      <h3>Последние записи в группе:</h3>
+      <h3>Записи сообщества: {{ group }}</h3>
       <article>
       {% for post in posts %}
         <ul>
@@ -17,11 +17,11 @@
         </ul>
         <p>{{ post.text }}</p> 
         {% if post.group %}   
-          <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
+          <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
         {% endif %}
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}
       </article>
-    </div>
- </main>
+   </div>
+</main>
 {% endblock %}
