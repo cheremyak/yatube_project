@@ -2,8 +2,24 @@
 <html lang="ru"> <!-- Язык сайта - русский -->
 {% extends 'base.html' %}
 {% block content %}
-    <h1>{{ posts }}</h1>
-    <p>
-       {{ group }}
-    </p>
+<main>
+   <div class="container">
+     <h1>{{ group.title }}</h1>
+     <p>
+       {{ group.descrition }}
+     </p>
+     <article>
+       <ul>
+         <li>
+           Автор: {{ post.author.get_full_name }}
+         </li>
+         <li>
+           Дата публикации: {{ pub_date }}
+         </li>
+       </ul>      
+       <p>
+         {{ text }}
+       </p>         
+     </article>
+ </main>
 {% endblock %}

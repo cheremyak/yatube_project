@@ -1,6 +1,4 @@
-
-from django.shortcuts import render
-
+from django.shortcuts import get_object_or_404, render
 from .models import Post, Group
 
 
@@ -20,6 +18,8 @@ def group_posts(request, slug):
           'posts': posts,
      }
      return render(request, 'posts/group_list.html', context)
+
+
 
     
     

@@ -9,6 +9,9 @@ class Group(models.Model):
     slug = models.SlugField()
     description = models.TextField()
 
+    def __str__(self):
+        return self.title
+
 class Post(models.Model):
     text = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -18,7 +21,7 @@ class Post(models.Model):
         related_name='posts'
     )
     group = models.ForeignKey(
-        'Group',
+        Group,
         blank=True,
         null=True,
         on_delete=models.CASCADE,
